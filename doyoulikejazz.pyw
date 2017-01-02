@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 #!/usr/bin/python
 from ctypes import *
 import socket, subprocess
@@ -110,7 +110,7 @@ while 1:
 
 s.close
 sys.exit()
-=======
+
 #!/usr/bin/python
 from ctypes import *
 import socket, subprocess
@@ -222,4 +222,4 @@ while 1:
 
 s.close
 sys.exit()
->>>>>>> origin/master
+
