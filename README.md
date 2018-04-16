@@ -1,5 +1,5 @@
 # blackHatPython
-Python keylogger for Windows and Linux
+Python buffer stream for Windows and Linux
 
 Swap out the IP address with a local IP address on the network or a public outward facing address for remote access.
 
